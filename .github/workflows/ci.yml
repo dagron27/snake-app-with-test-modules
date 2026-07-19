@@ -1,0 +1,40 @@
+# Continuous Integration workflow for the Snake game Maven project.
+# The actual Maven project lives in the snake_group_project/ subfolder,
+# not the repo root, so all Maven steps run with that as the working
+# directory.
+name: CI
+
+# Run on every push to any branch, and also allow manually triggering
+# the workflow from the GitHub Actions UI.
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    # Use GitHub's standard Linux runner image, which ships with a
+    # recent Maven install once a JDK is set up via setup-java.
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository so subsequent steps can access the
+      # source tree.
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # Install a JDK. pom.xml sets maven.compiler.release to 23, so
+      # request Java 23 here with the Temurin distribution (Eclipse
+      # Adoptium), which is supported by setup-java.
+      - name: Set up JDK 23 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '23'
+
+      # Compile the game sources and run the JUnit 5 test suite
+      # (Position, Snake, Food, and GamePanel unit tests, plus the
+      # GamePanel+Food integration test) from the snake_group_project
+      # subfolder, since that is where pom.xml lives.
+      - name: Build and run tests with Maven
+        working-directory: snake_group_project
+        run: mvn -B compile test

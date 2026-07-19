@@ -1,0 +1,47 @@
+Multi-Author Group Coursework Project -- License Notice
+=========================================================
+
+This repository contains a group project completed for an SE 470 course
+assignment. It has multiple contributors:
+
+- Daniel Leone (dagron27) <dleone27@gmail.com>
+- JMDeschenes13 <103342404+JMDeschenes13@users.noreply.github.com>
+- kouslab <labhmong123@gmail.com>
+
+The MIT License below is granted by Daniel Leone ONLY, and applies ONLY to
+the portions of this Software that Daniel Leone personally authored (see
+the "Contributions" section of README.md for a summary of which files and
+changes those are, based on the project's git history).
+
+The contributions of the other named authors are included in this
+repository for archival and portfolio purposes only, as part of the
+historical record of a shared coursework assignment. No permission has
+been obtained from those authors to relicense their work, and no license
+is granted here, implicitly or explicitly, to their contributions. Anyone
+wishing to use, copy, modify, or distribute those portions must obtain
+permission directly from the respective author(s).
+
+MIT License (scoped to Daniel Leone's contributions only)
+-----------------------------------------------------------
+
+Copyright (c) 2026 Daniel Leone
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the portions of this Software authored by Daniel Leone, and the
+associated documentation files attributable to him (collectively, the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
