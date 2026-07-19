@@ -2,7 +2,62 @@
 
 ![CI](https://github.com/dagron27/se470_group_project/actions/workflows/ci.yml/badge.svg)
 
-**Assignment:** `se470_group_project-main` — SE 470 (group assignment).
+**Course:** `SE 470, Software Quality, Spring 2025`
+
+**Assignment:** `se470_group_project` (group assignment)
+
+## Assignment Intent
+
+No rubric was provided for this assignment. Per the author: although the
+Snake game application itself was built as part of this project, the
+graded focus was the testing work -- unit tests, integration tests, and
+other dedicated testing -- not the game. The following is extrapolated
+directly from the test suite (`src/test/java/com/snakegame/`) rather than
+from an instruction document.
+
+**Unit tests** (`UnitTests/`), one class per production class:
+- `PositionTest` -- an `equals()`-contract test: reflexive/symmetric
+  equality across equal and unequal `Position` instances, plus explicit
+  checks that `equals()` returns `false` against non-`Position` arguments
+  (an `Integer`, a `String`) -- a deliberate equals-contract technique, not
+  just a single sanity check.
+- `FoodTest` -- an object-creation invariant (position is non-null after
+  construction), a boundary-value check (the spawned position is inside
+  the grid's `[0, GRID_WIDTH)`/`[0, GRID_HEIGHT)` bounds), and a
+  randomization test that is honest about its own limitation: its own
+  comment notes the new position "*might* be the same by coincidence," so
+  it only asserts non-null rather than asserting inequality -- a
+  deliberate choice to avoid a flaky test rather than an oversight.
+- `SnakeTest` -- state-based behavior tests: initial length and head
+  position, single-step movement, growth, direction get/set, wall
+  collision (detected by moving the snake out of bounds in a loop), and
+  self-collision (constructed via a specific multi-step movement
+  sequence) -- covering each of `Snake`'s behaviors and both collision
+  branches.
+- `GamePanelTest` -- uses Java reflection to reach into `GamePanel`'s
+  private fields and private `handleKeyPress` method, so it can assert on
+  internal state (`isRunning`, the private `Snake` field) that isn't
+  exposed through a public API: confirms `startGame()` flips the running
+  flag, that an arrow-key press changes the snake's direction, and
+  specifically that a same-axis reversal (`RIGHT` -> `LEFT`) is rejected
+  -- a real game-logic invariant, not just an accessor check.
+
+**Integration test** (`IntegrationTests/GamePanelFoodIntegrationTest`):
+exercises `Snake`, `Food`, and `GamePanel` together rather than any one
+class in isolation. Both tests use an anonymous `Food` subclass overriding
+`randomizePosition()` as a test double -- one that does nothing (to pin
+food at a known location) and one that forces a specific relocation --
+injected into the panel via reflection, specifically to make otherwise-
+random food placement deterministic and testable. This confirms the snake
+grows by one segment after eating food, and that food relocates to a new
+position afterward.
+
+Read as a whole, the suite demonstrates several distinct testing
+techniques deliberately: equals-contract testing, boundary-value checks,
+state-based behavior testing across multiple branches, white-box testing
+of private state via reflection, and use of test doubles to make
+non-deterministic behavior verifiable -- consistent with a "Software
+Quality" course's focus on testing technique over application features.
 
 This repository root only contains project scaffolding (`.project`, `.gitattributes`,
 `.gitignore`, this file). The actual Maven project lives in the subfolder
