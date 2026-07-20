@@ -151,10 +151,13 @@ itself (e.g. pressing Down while moving Up is ignored).
 
 ## Contributions
 
-This was a group assignment with three contributors. Per-author history is
-preserved in the repository's git log (`git log --author=...`) and is
-summarized here for reference; it is also the basis for the LICENSE scoping
-in this repository (see `LICENSE`).
+This was a group assignment with three contributors. This repository's
+history has been reset to a single commit (see Known Issues below), so
+the per-author, per-commit breakdown below is **not** independently
+verifiable via `git log --author=...` in this checkout -- it reflects
+what was visible in an earlier, granular copy of the history before the
+reset, and is preserved here for reference. It is also the basis for the
+LICENSE scoping in this repository (see `LICENSE`).
 
 **Daniel Leone (dagron27)** -- primary implementer:
 
@@ -215,13 +218,17 @@ updated in `39cc680`) and the Eclipse project metadata (`.project`,
    `mvn test` should still be used to confirm the full build once Maven is
    available.
 
-3. **Git history for individual contributions -- RESOLVED**
-   An earlier note here claimed this archive had no prior commit history.
-   That was true only of an older zip-extracted copy of the project; this
-   checkout was cloned directly from GitHub and retains the full original
-   commit history (`c53ef43` through `39cc680`, April 2025). Per-member
-   contributions can be verified with `git log --author=...`; see the
-   "Contributions" section below for a summary.
+3. **Git history for individual contributions -- corrected.** An earlier
+   note here claimed this checkout retained the full original commit
+   history (`c53ef43` through `39cc680`, April 2025) and that per-member
+   contributions could be verified with `git log --author=...`. That was
+   true at the time it was written, but this repository's history has
+   since been reset to a single commit as part of portfolio prep (see
+   the root commit's own message) -- those hashes no longer exist in
+   this checkout, and that claim is now inaccurate. The per-author
+   breakdown below is retained for reference from before the reset, not
+   as something independently verifiable against this repository's
+   current git log.
 
 ### Security
 
