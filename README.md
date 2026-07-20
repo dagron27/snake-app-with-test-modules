@@ -1,6 +1,6 @@
 # Java Swing Snake Game
 
-![CI](https://github.com/dagron27/se470_group_project/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/dagron27/snake-app-with-test-modules/actions/workflows/ci.yml/badge.svg)
 
 **Course:** `SE 470, Software Quality, Spring 2025`
 
@@ -143,8 +143,11 @@ java -cp "target/classes;$(cat cp.txt)" com.snakegame.Game
 
 (On Windows PowerShell, replace the classpath separator `;`/backtick as
 appropriate for your shell, or simply run the compiled class from an IDE
-such as Eclipse/NetBeans, which are set up via the committed `.project` /
-`.classpath` / `nbactions.xml` files.)
+such as Eclipse/NetBeans -- Eclipse is set up via the committed
+`.project` / `.classpath` files; a local `nbactions.xml` for NetBeans
+may exist in your working copy but is git-ignored by this repo's root
+`.gitignore` (`*.xml`, with only `pom.xml` negated back in), so it is
+not committed and won't be present in a fresh clone.)
 
 Controls: Arrow keys to steer. The snake may not reverse directly into
 itself (e.g. pressing Down while moving Up is ignored).
